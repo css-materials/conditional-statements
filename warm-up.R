@@ -1,5 +1,6 @@
 # WARM UP CONDITIONAL STATEMENTS
-
+# Observe the syntax and describe what the code does 
+# Try to anticipate the output before running the code
 
 # if-else
 age <- 14
@@ -19,7 +20,7 @@ if (!is.numeric(my_numbers)) {
 }
 
 
-# if, else if, else
+# if, else if, else: simple example
 x <- 0
 if (x > 0) {
   print("x is a positive number")
@@ -28,6 +29,21 @@ if (x > 0) {
 } else {
   print("x is zero")
 }
+
+# if, else if, else: more complex example
+temperature <- as.integer(readline
+                          (prompt = "Enter today's temperature in Celsius: ")
+                          )
+if (temperature >= 30) {
+  weather <- "Hot"
+} else if (temperature >= 20) {
+  weather <- "Cool"
+} else if (temperature >= 10) {
+  weather <- "Breezy"
+} else {
+  weather <- "Freezing!"
+}
+print(weather)
 
 
 # nested if-else
@@ -47,7 +63,7 @@ if (x > 0) {
 }
 
 
-# improved nested if-else
+# improved nested if-else (why is this improved?)
 x <- 0
 if (x > 0) {
   if (x %% 2 == 0) {
@@ -80,7 +96,7 @@ ifelse(numbers %% 2 == 1,
        "even")
 
 
-#ifelse()
+# ifelse()
 library(tidyverse)
 qualify <- tibble("Athlet" = c("Noah", "Julio", "Nick", "Maria"), 
                   "Scores" = c(32, 37, 28, 30))
