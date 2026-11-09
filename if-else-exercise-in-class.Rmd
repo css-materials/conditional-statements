@@ -1,0 +1,85 @@
+---
+title: "Conditional Statements: In-Class Exercise"
+output: html_document
+date: "`r format(Sys.Date(), '%B %d, %Y')`"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# TASK: Group penguins into three body-mass categories and compare their average flipper length
+
+Load the packages:
+```{r}
+library(palmerpenguins)
+library(tidyverse)
+```
+
+Your goal:
+
+Create a new column, `mass_category`, in the `penguins` dataset that categorizes each penguin by its body mass (variable `body_mass_g`). If `body_mass_g` is:
+
+* greater than 5000, label it "Large"
+* between 4000 and 5000 (inclusive), label it "Medium"
+* less than 4000, label it "Small"
+
+Then use `group_by()` to group the data by `mass_category`, and use `summarize()` to calculate the average flipper length (variable `flipper_length_mm`) for each category.
+
+
+## Answer using a function we already know: `case_when()`
+
+Use the `dplyr` functions `mutate()` and `case_when()` to create the new `mass_category` variable. Once you are done, revise your code to add a condition that checks for missing values in `body_mass_g` and sets them to `NA_character_` in `mass_category`.
+
+Your solution without checking for NA:
+```{r}
+# write your code here
+
+```
+
+Your solution checking for NA:
+```{r}
+# write your code here
+
+```
+
+
+## Answer using a new concept from today: the `ifelse()` function
+
+Remember the syntax from the slides:
+```
+ifelse(condition to be evaluated,
+       action performed when condition is TRUE,
+       action performed when condition is FALSE)
+```
+
+Your solution without checking for NA:
+```{r}
+# write your code here
+
+```
+
+Your solution checking for NA:
+```{r}
+# write your code here
+
+```
+
+
+## Answer using a new concept from today: a set of `if`/`else` statements
+
+In this case, you need to use `rowwise()` at the top of your code so that your `if` and `else` statements are applied to each row of the data frame. In practice, `rowwise()` forces R to process each row individually (i.e., it treats each row as its own group). The structure looks like this:
+```{r, eval = FALSE}
+penguins |>
+  rowwise() |>
+  mutate(
+    # add your if and else statements here
+  )
+```
+
+Your solution (must include the check for NA at the top):
+```{r}
+# write your code here
+
+```
+

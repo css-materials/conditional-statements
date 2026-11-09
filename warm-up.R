@@ -1,8 +1,8 @@
-# WARM UP CONDITIONAL STATEMENTS
-# Observe the syntax and describe what the code does 
-# Try to anticipate the output before running the code
+# CONDITIONAL STATEMENTS
+# Observe the syntax and describe what the code does
+# Predict the output before running the code (one example at a time)
 
-# if-else
+# example 1: if else
 age <- 14
 if (age > 16) {
   print("You can get a driving license")
@@ -11,7 +11,7 @@ if (age > 16) {
 }
 
 
-# if-else
+# example 2: if else
 my_numbers <- c(3,4,5,"6",7)
 if (!is.numeric(my_numbers)) {
   print("At least one element is not numeric. Only provide numbers.")
@@ -20,7 +20,7 @@ if (!is.numeric(my_numbers)) {
 }
 
 
-# if, else if, else: simple example
+# example 3: if, else if, else
 x <- 0
 if (x > 0) {
   print("x is a positive number")
@@ -30,10 +30,11 @@ if (x > 0) {
   print("x is zero")
 }
 
-# if, else if, else: more complex example
-temperature <- as.integer(readline
-                          (prompt = "Enter today's temperature in Celsius: ")
-                          )
+
+# example 4
+# run this line first, type a number in the console, press enter
+temperature <- as.numeric(readline(prompt = "Enter today's temperature in Celsius: "))
+# then run this part
 if (temperature >= 30) {
   weather <- "Hot"
 } else if (temperature >= 20) {
@@ -46,7 +47,9 @@ if (temperature >= 30) {
 print(weather)
 
 
-# nested if-else
+# example 5: nested if else
+# the %% modulo operator calculates the remainder from a division
+# here 15 %% 2 is 7 with 1 as reminder
 x <- 15
 if (x > 0) {
   if (x %% 2 == 0) {
@@ -63,7 +66,8 @@ if (x > 0) {
 }
 
 
-# improved nested if-else (why is this improved?)
+# example 6
+# what's the difference from the previous example? 
 x <- 0
 if (x > 0) {
   if (x %% 2 == 0) {
@@ -82,22 +86,16 @@ if (x > 0) {
 }
 
 
-# ifelse()
+# example 7: ifelse()
 y <- 3
 ifelse(sqrt(16) > y, 
        sqrt(16),
        0)
 
 
-# ifelse()
+# example 8: ifelse()
+# what's the difference from the previous example? 
 numbers <- c(10, 6, 7)
 ifelse(numbers %% 2 == 1, 
        "odd",
        "even")
-
-
-# ifelse()
-library(tidyverse)
-qualify <- tibble("Athlet" = c("Noah", "Julio", "Nick", "Maria"), 
-                  "Scores" = c(32, 37, 28, 30))
-ifelse(qualify$"Scores" > 30, "Admitted", "Rejected")
